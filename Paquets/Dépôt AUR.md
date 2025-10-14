@@ -14,7 +14,7 @@ yay (Yet Another Yaourt) est un helper AUR. Il simplifie l’installation et la 
 - l’installation,
 - la mise à jour.
 
-Remarque : Yaourt était "Yet AnOther User Repositoiry Tool"
+Remarque : Yaourt était "Yet AnOther User Repository Tool"
 
 ## Installer yay
 
@@ -27,6 +27,73 @@ sudo pacman -S yay
 ## Installer un paquet avec Yay :
 
 Prenons les exemples de [teamviewer](https://aur.archlinux.org/packages/teamviewer) et [goofcord](https://aur.archlinux.org/packages/goofcord-bin) :
+
+Sur la page de teamviewer, à côté de "Package Base" on lit "teamviewer" et sur celle de GoofCord, on lit "goofcord-bin"
+
+Donc pour installer ces logiciels, on va taper :
+
+```
+yay -S teamviewer
+```
+et
+```
+yay -S goofcord-bin
+```
+
+Notez l'absence de `sudo` au début : pas besoin pour la compilation.
+Toutefois, une fois cette compilation terminée, **yay** demandera les droits admin pour procéder à l'installation.
+
+yay va vous demander s'il faut garder les sources (packages to cleanbuild) : je choisis "Tous"
+Il demande ensuite si on veut voir les différences. Je choisis généralement "Aucun"
+La compilation se lance, puis l'installation.
+
+## Mettre à jour avec Yay :
+
+Je préfère n'utiliser yay que pour mes paquets AUR. Donc la commande sera :
+```
+yay -Sua
+```
+
+Et c'est tout.
+
+Remarque : il n'y a généralement pas de vérfication automatique des mises à jour disponibles sous yay. Il faut donc prévoir un petit script.
+
+Par exemples, dans mon home, j'ai un fichier "yay-check.sh" qui contient :
+```
+#!/bin/bash
+updates=$(yay -Qu)
+if [ -n "$updates" ]; then
+    notify-send "🔔 Mises à jour AUR disponibles" "$updates"
+fi
+```
+
+Et je le lance au démarrage avec un fichier *desktop* dans *autostart* :
+~/.config/autostart/yay-check-autostart.desktop
+
+qui contient :
+```
+[Desktop Entry]
+Comment[fr_FR]=
+Comment=
+Exec=/home/melgrin/scripts/yay-check.sh
+GenericName[fr_FR]=
+GenericName=
+Hidden=false
+Icon=aurees
+MimeType=
+Name[fr_FR]=Test des mises à jour AUR
+Name=Test des mises à jour AUR
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
+```
 
 
 
