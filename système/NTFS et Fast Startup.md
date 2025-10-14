@@ -31,8 +31,10 @@ Evidemment, si on veut monter régulièrement ce disque avec les bonnes options,
 2) Repérer l'UUID : le terminal a renvoyé "/dev/sdXi: UUID="1234-ABCD" TYPE="ntfs"" , l'UUID est 1234-ABCD
 3) Editer FSTAB : `sudo nano /etc/fstab`
 4) Ajouter à la fin OU modifier la ligne :
-   ```UUID=Z123Z12X12Z1234F                       /mnt/DISQUE   ntfs-3g permissions,nls=iso8859-1,users,auto,exec                        0 0```
 
+```
+UUID=Z123Z12X12Z1234F                       /mnt/DISQUE   ntfs-3g permissions,nls=iso8859-1,users,auto,exec                        0 0
+```
 **Remarque :** L'UUID peut avoir plusieurs formes. Par exemple :  1d5026db-68cg-2b0a-ab2f-7e07dc047650
 
 Normalement le disque devrait être monté automatiquement au démarrage avec les bonnes options et on aura un accès complet.
