@@ -16,7 +16,7 @@ En ajoutant la variable d’environnement :
 `QT_QPA_PLATFORM=xcb libreoffice`
 LibreOffice se lance avec un rendu correct, sans problème de mise à l’échelle.
 
-On va donc modifier nos fichiers .desktop pour que toutes les applis LibreOffice utilisent cette variable automatiquement.
+On va donc modifier nos fichiers .desktop pour que toutes les applis LibreOffice utilisent cette variable automatiquement. (Attention, le "+" présent dans le bloc doit être supprimé, il me sert à surligner en vert la ligne importante)
 
 Par exemple :
 ```diff
