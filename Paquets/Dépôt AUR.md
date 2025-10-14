@@ -75,7 +75,7 @@ qui contient :
 [Desktop Entry]
 Comment[fr_FR]=
 Comment=
-Exec=/home/melgrin/scripts/yay-check.sh
+Exec=/home/leloinadrass/scripts/yay-check.sh
 GenericName[fr_FR]=
 GenericName=
 Hidden=false
