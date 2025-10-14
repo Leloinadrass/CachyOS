@@ -7,14 +7,14 @@ L’**AUR** (Arch User Repository) est un dépôt communautaire pour Arch Linux 
 
 ## C’est quoi yay ?
 
-yay (Yet Another Yaourt) est un helper AUR. Il simplifie l’installation et la mise à jour des paquets depuis l’AUR, en automatisant :
+yay (Yet Another Yogurt) est un helper AUR. Il simplifie l’installation et la mise à jour des paquets depuis l’AUR, en automatisant :
 
 - la récupération du PKGBUILD,
 - la compilation,
 - l’installation,
 - la mise à jour.
 
-Remarque : Yaourt était "Yet AnOther User Repository Tool"
+Remarque : Yaourt était (obsolète et non maintenu) "Yet AnOther User Repository Tool"
 
 ## Installer yay
 
@@ -24,7 +24,7 @@ Sur CachyOS ou Manjaro on gagne un peu de temps par rapport à Arch car l'essent
 sudo pacman -S yay
 ```
 
-## Installer un paquet avec Yay :
+## Installer un paquet avec yay :
 
 Prenons les exemples de [teamviewer](https://aur.archlinux.org/packages/teamviewer) et [goofcord](https://aur.archlinux.org/packages/goofcord-bin) :
 
@@ -47,7 +47,7 @@ yay va vous demander s'il faut garder les sources (packages to cleanbuild) : je 
 Il demande ensuite si on veut voir les différences. Je choisis généralement "Aucun"
 La compilation se lance, puis l'installation.
 
-## Mettre à jour avec Yay :
+## Mettre à jour avec yay :
 
 Je préfère n'utiliser yay que pour mes paquets AUR. Donc la commande sera :
 ```
@@ -56,9 +56,10 @@ yay -Sua
 
 Et c'est tout.
 
-Remarque : il n'y a généralement pas de vérfication automatique des mises à jour disponibles sous yay. Il faut donc prévoir un petit script.
+Remarque : il n'y a généralement pas de vérfication automatique des mises à jour disponibles sous yay. En tout cas, pas par défaut.
+Il faut donc prévoir un petit script. (Ou une intégration à systemd)
 
-Par exemples, dans mon home, j'ai un fichier "yay-check.sh" qui contient :
+Par exemple, dans mon home, j'ai un fichier "yay-check.sh" qui contient :
 ```
 #!/bin/bash
 updates=$(yay -Qu)
@@ -79,7 +80,7 @@ Exec=/home/leloinadrass/scripts/yay-check.sh
 GenericName[fr_FR]=
 GenericName=
 Hidden=false
-Icon=aurees
+Icon=system-software-update
 MimeType=
 Name[fr_FR]=Test des mises à jour AUR
 Name=Test des mises à jour AUR
