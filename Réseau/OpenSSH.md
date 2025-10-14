@@ -28,21 +28,21 @@ CachyOS active **ufw** par défaut.
 Il faut donc ouvrir l'utilisation ssh :
 
 ```
-sudo pacman -S ufw
-sudo ufw enable
 sudo ufw allow ssh
 ```
+Cela va ouvrir le port 22/TCP dans ufw.
+
 
 ## Récupérer l'IP du PC
 
 La commande `ip a` suffit.
-Une interface ethernet sera probablement `eno1` et une interface wifi sera certainement `wlan0`. LIP est juste après "inet 192.168.x.YYY"
+Une interface ethernet sera probablement `eno1` et une interface wifi sera certainement `wlan0`. L'IP est juste après "inet" sous la forme "192.168.x.YYY" (Ip locale)
 
 
-## dans le téléphone
+## Sur le téléphone
 
 1) On lance JuiceSSH
-2) On crée une nouvelle identité qui dans "utilisateur" aura le nom d'utilisateur sur le PC (par exemple "leloinadrass") etle mot de passe associé.
+2) On crée une nouvelle identité qui dans "utilisateur" aura le nom d'utilisateur sur le PC (par exemple "leloinadrass") et le mot de passe associé.
 3) On crée une connexion dans laquelle on renseigne l'IP du PC et on choisit la bonne identité.
 
 Normalement, ça se connecte et on a accès au terminal du PC.
