@@ -14,7 +14,7 @@ Sur mon installation, je galérais à faire fonctionner Samba, donc j'ai recré�
 
 Remarque : [la DOC officielle de Manjaro est très bien](forum.manjaro.org/t/root-tip-how-to-basic-samba-setup-and-troubleshooting/100420) 
 
-Il faut créer manuellement les dossier/fichiers :
+Il faut créer manuellement les dossiers et fichiers :
 ```
 sudo mkdir -p /etc/samba
 sudo touch /etc/samba/smb.conf
@@ -58,7 +58,10 @@ directory mask = 0777
 browseable = yes
 
 ```
-Remarque : ce fichier a des petits soucis (`public = yes` est obsolète apparemment, et les permissions en 0777 sont un peu dégueulasses (tout le monde est root) ) donc il vaudrait mieux 0775.)
+Remarque : ce fichier a des petits soucis :
+- `public = yes` est obsolète apparemment, `guest ok = yes` suffit,
+-  et les permissions en 0777 sont un peu dégueulasses (tout le monde est root)  donc il vaudrait mieux 0775.
+-  On pourrait ajouter `force user = nobody` pour éviter des problèmes de permissions côté Linux.
 
 
 
@@ -71,7 +74,7 @@ Ensuite on va utiliser avahi pour que le dossier soit visible sur le réseau :
 ```
 sudo systemctl enable --now avahi-daemon.service avahi-daemon.socket
 ```
-il faut aussi que le fichier `/etc/nsswitch.conf` contient :
+il faut aussi que le fichier `/etc/nsswitch.conf` contienne :
 ```
 hosts: files mdns4_minimal [NOTFOUND=return] dns myhostname
 ```
@@ -84,7 +87,7 @@ sudo systemctl restart avahi-daemon
 
 Sous CachyOS il faut aussi penser au pare-feu et laisser passer samba :
 ```
-sudo ufw allow 137/udpforce user = nobody
+sudo ufw allow 137/udp
 sudo ufw allow 138/udp
 sudo ufw allow 139/tcp
 sudo ufw allow 445/tcp
@@ -95,7 +98,10 @@ Sur d’autres distributions, la commande `sudo ufw allow samba` suffit, mais so
 
 ### Bonus : les services
 
-Personnellement, j'ai recréé les services à un moment parce que sinon le terminal me disait qu'ils n'existaient pas.
+Personnellement, j'ai recréé les services à un moment parce que sinon le terminal me disait qu'ils n'existaient pas et qu'il en avait besoin.
+
+Le truc, c'est que smbd et nmbd sont les services "historiques", mais ajourd'hui on utilise les services smb et nmb. Sans le `d`. 
+Donc, à mon humble avis, le problème venait d'ailleurs, mais passer par cette étape m'a permis de le contourner.
 
 Si jamais ça se re-présente, voici ce que j'ai fait :
 
