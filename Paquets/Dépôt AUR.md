@@ -14,7 +14,7 @@ yay (Yet Another Yogurt) est un helper AUR. Il simplifie l’installation et la 
 - l’installation,
 - la mise à jour.
 
-Remarque : Yaourt était (obsolète et non maintenu) "Yet AnOther User Repository Tool"
+Remarque : Yaourt (Yet AnOther User Repository Tool) était un ancien helper AUR, aujourd’hui obsolète et non maintenu.
 
 ## Installer yay
 
@@ -62,11 +62,14 @@ Il faut donc prévoir un petit script. (Ou une intégration à systemd)
 Par exemple, dans mon home, j'ai un fichier "yay-check.sh" qui contient :
 ```
 #!/bin/bash
-updates=$(yay -Qu)
+updates=$(yay -Qua)
 if [ -n "$updates" ]; then
     notify-send "🔔 Mises à jour AUR disponibles" "$updates"
 fi
 ```
+
+`yay -Qua` ne cherche que les mises à jour du dépôt AUR. Je fais les mises à jour des paquets officiels de la distribution avec `pacman`.
+
 
 Et je le lance au démarrage avec un fichier *desktop* dans *autostart* :
 ~/.config/autostart/yay-check-autostart.desktop
