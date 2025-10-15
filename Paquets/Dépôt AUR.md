@@ -29,6 +29,11 @@ Sur Manjaro, il a fallu que j'installe Fakeroot pour pouvoir utiliser yay :
 sudo pacman -S fakeroot
 ```
 
+Apparemment, il peut être judicieux d'anticiper et d'installer aussi les bases du développeur :
+```
+sudo pacman -S base-devel
+```
+
 ## Installer un paquet avec yay :
 
 Prenons les exemples de [teamviewer](https://aur.archlinux.org/packages/teamviewer) et [goofcord](https://aur.archlinux.org/packages/goofcord-bin) :
