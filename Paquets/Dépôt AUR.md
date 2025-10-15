@@ -24,6 +24,11 @@ Sur CachyOS ou Manjaro on gagne un peu de temps par rapport à Arch car l'essent
 sudo pacman -S yay
 ```
 
+Sur Manjaro, il a fallu que j'installe Fakeroot pour pouvoir utiliser yay :
+```
+sudo pacman -S fakeroot
+```
+
 ## Installer un paquet avec yay :
 
 Prenons les exemples de [teamviewer](https://aur.archlinux.org/packages/teamviewer) et [goofcord](https://aur.archlinux.org/packages/goofcord-bin) :
