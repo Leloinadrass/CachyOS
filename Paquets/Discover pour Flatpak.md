@@ -14,6 +14,7 @@ Cela l'empêche de voir les paquets Arch et leurs mises à jour. Normalement, so
 
 Ensuite, on vérifie que flatpak est bien installé :
 ```
+sudo pacman -S flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 Pareil, normalement, sous CachyOS, c'est déjà en place.
