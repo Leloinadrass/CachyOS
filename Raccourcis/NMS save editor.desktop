@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Game;
+Comment[fr_FR]=Editez le contenu de vos sauvegardes
+Comment=Editez le contenu de vos sauvegardes
+Exec=/mnt/SSD2to/Cheat/NMSSaveEditor/nms-save-editor.sh
+GenericName[fr_FR]=
+GenericName=
+Icon=/mnt/SSD2to/Cheat/NMSSaveEditor/icon.png
+MimeType=
+Name[fr_FR]=No Man's Sky Save Editor
+Name=No Man's Sky Save Editor
+Path=/mnt/nvme4to/SteamLibrary/steamapps/compatdata/275850/pfx/drive_c/users/steamuser/Application Data/HelloGames/NMS/st_76561197971199534/
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
