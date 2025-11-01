@@ -1,0 +1,20 @@
+[Desktop Entry]
+Comment[fr_FR]=Accédez à vos fichiers depuis n'importe quel ordinateur
+Comment=Accédez à vos fichiers depuis n'importe quel ordinateur
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/dropbox-app com.dropbox.Client
+GenericName[fr_FR]=
+GenericName=
+Hidden=false
+Icon=com.dropbox.Client
+MimeType=
+Name[fr_FR]=Dropbox Autostart
+Name=Dropbox Autostart
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
