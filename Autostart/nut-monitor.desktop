@@ -1,0 +1,9 @@
+# ~/.config/autostart/nut-monitor.desktop
+[Desktop Entry]
+Type=Application
+Exec=/home/melgrin/scripts/start-nut.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=UPS Monitor
+Comment=Lance NUT au démarrage
