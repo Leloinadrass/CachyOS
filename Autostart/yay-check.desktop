@@ -1,0 +1,20 @@
+[Desktop Entry]
+Comment[fr_FR]=
+Comment=
+Exec=/home/melgrin/scripts/yay-check.sh
+GenericName[fr_FR]=
+GenericName=
+Hidden=false
+Icon=aurees
+MimeType=
+Name[fr_FR]=Test des mises à jour AUR
+Name=Test des mises à jour AUR
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-GNOME-Autostart-enabled=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
