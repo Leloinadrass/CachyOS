@@ -1,0 +1,26 @@
+
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=2CB0-6E17                              /boot          vfat      umask=0077                                                       0 2
+UUID=aee5cae3-9ab0-4847-96f0-c96184e83798   swap           swap      defaults                                                         0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /              btrfs     subvol=/@,noatime,compress=zstd,space_cache=v2,commit=120        0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /root          btrfs     subvol=/@root,noatime,compress=zstd,space_cache=v2,commit=120    0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /srv           btrfs     subvol=/@srv,noatime,compress=zstd,space_cache=v2,commit=120     0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /var/cache     btrfs     subvol=/@cache,noatime,compress=zstd,space_cache=v2,commit=120   0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /var/tmp       btrfs     subvol=/@tmp,noatime,compress=zstd,space_cache=v2,commit=120     0 0
+UUID=5655368f-0d6a-475d-9c62-7ee08421d3d1   /var/log       btrfs     subvol=/@log,noatime,compress=zstd,space_cache=v2,commit=120     0 0
+UUID=708f53d3-e5b9-472d-9c56-994c607dc1d5   /home          btrfs     noatime,compress=zstd,space_cache=v2,commit=120                  0 0
+tmpfs                                       /tmp           tmpfs     noatime,mode=1777                                                0 0
+UUID=1d5026db-89bf-4a0b-ba2c-7e07dc047650   /mnt/nvme4to   ext4      nofail                                                           0 0
+UUID=66f2e999-0445-4f1f-a1fd-6339a44ad6fe   /mnt/nvme2to   ext4      nofail                                                           0 0
+UUID=7975aa83-e191-4c76-b7e6-5235682641ca   /mnt/SSD2to    ext4      nofail                                                           0 0
+# UUID=82A07D9BA07D95FF                       /mnt/jeux      ntfs-3g permissions,nls=iso8859-1,users,auto,exec                        0 0
+# UUID=B240B35A40B3244F                       /mnt/donnees   ntfs-3g   permissions,nls=iso8859-1,users,auto,exec                        0 0
+UUID=c156f0d9-f648-4899-a6c1-5c6c09ec8d6b   /mnt/HDD       btrfs     nofail                                                           0 0
+
+# Bind mount pour ROCm
+/mnt/nvme4to/LLM/rocm                       /opt/rocm      none      bind,nofail                                                      0 0
+
